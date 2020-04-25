@@ -1,26 +1,26 @@
 package com.k15t.pat.model;
 
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-import javax.persistence.*;
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlRootElement(name = "user")
+public class RegistrationModel implements Serializable {
 
-@Entity
-@Table(name = "users")
-@EntityListeners(AuditingEntityListener.class)
-public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @XmlAttribute(name = "id")
     private int id;
+    @XmlAttribute(name = "Name", required = true)
     private String Name;
+    @XmlAttribute(name = "Password", required = true)
     private String Password;
+    @XmlAttribute(name = "Address", required = true)
     private String Address;
+    @XmlAttribute(name = "Email", required = true)
     private String Email;
     private String Number;
-
-    public User() {
-    }
-
 
     public int getId() {
         return id;
