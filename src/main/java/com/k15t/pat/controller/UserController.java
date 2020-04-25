@@ -20,7 +20,7 @@ public class UserController {
 
     /***
      * Controller for adding Java meetUp users.
-     * @param user
+     * @param user User data
      * @return
      */
     @PostMapping("/users")
