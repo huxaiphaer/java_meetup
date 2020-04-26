@@ -3,10 +3,10 @@ package com.k15t.pat.model;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
 
 @Entity
 @Table(name = "users")
@@ -27,11 +27,19 @@ public class User {
     private String Address;
     @NotBlank(message = "Email is mandatory")
     @javax.validation.constraints.Email(message = "Email format is wrong please")
-    @Pattern(regexp=".+@.+\\..+", message="Please provide a valid email address")
+    @Pattern(regexp = ".+@.+\\..+", message = "Please provide a valid email address")
     private String Email;
     private String Number;
 
     public User() {
+    }
+
+    public User(String Name, String Password, String Address, String Email, String Number) {
+        this.Name = Name;
+        this.Password = Password;
+        this.Address = Address;
+        this.Email = Email;
+        this.Number = Number;
     }
 
 
