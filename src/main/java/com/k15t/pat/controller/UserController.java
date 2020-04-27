@@ -19,6 +19,9 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    public UserController(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     /***
      * Controller for adding Java meetUp users.
