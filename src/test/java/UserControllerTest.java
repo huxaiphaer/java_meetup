@@ -1,5 +1,3 @@
-package tests.controller;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.k15t.pat.ApplicationBootstrap;
 import com.k15t.pat.model.User;
@@ -10,14 +8,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ApplicationBootstrap.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class UserControllerTests {
+@ActiveProfiles("test")
+public final class UserControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
