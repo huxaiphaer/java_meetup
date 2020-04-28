@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/huxaiphaer/java_meetup.svg?branch=develop)](https://travis-ci.org/huxaiphaer/java_meetup)
 [![codecov](https://codecov.io/gh/huxaiphaer/java_meetup/branch/develop/graph/badge.svg)](https://codecov.io/gh/huxaiphaer/java_meetup)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ac472386550f7b6280b0/maintainability)](https://codeclimate.com/github/huxaiphaer/java_meetup/maintainability)
 
 # Java MeetUp Application.
 
@@ -25,7 +26,7 @@ The following are the variables to set :
 
 `SPRING_DB_USERNAME` - _set your username e.g postgres_
 
-`SPRING_DB_PASSWORD` - _set yoyr password e.g password_
+`SPRING_DB_PASSWORD` - _set your password e.g password_
 
 
 #### On  Windows
@@ -41,7 +42,7 @@ The following are the variables to set :
 
 `SPRING_DB_USERNAME` - _set your username e.g postgres
 
-`SPRING_DB_PASSWORD` - _set yoyr password e.g password_
+`SPRING_DB_PASSWORD` - _set your password e.g password_
 
 
 The above are [PostgresSQL](https://www.postgresql.org/download/) settings, however you can use any database of your choice  to configure `application.properties` file. 
