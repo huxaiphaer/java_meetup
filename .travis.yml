@@ -28,10 +28,6 @@ env:
     - PGUSER=postgres
     - PGPORT=5432
     - PGHOST=localhost
-#    - SPRING_DB_HOST =$SPRING_DB_HOST
-#    - SPRING_DB_PASSWORD =$SPRING_DB_PASSWORD
-#    - SPRING_DB_PORT =$SPRING_DB_PORT
-#    - SPRING_DB_USERNAME =$SPRING_DB_USERNAME
 
 script:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
