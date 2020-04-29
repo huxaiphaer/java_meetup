@@ -45,10 +45,10 @@ export default {
 
     },
     actions: {
-        toast_snackbar_on_error({ commit }, message) {
+        toast_snackbar_on_error({commit}, message) {
             commit('toast_snackbar_on_error', message);
         },
-        reset_snackbar({ commit }) {
+        reset_snackbar({commit}) {
             commit('reset_snackbar');
         },
         registerUsers({commit}, data) {
@@ -63,14 +63,17 @@ export default {
                         commit('toast_snackbar_on_success');
                         commit('loader_off');
 
-                    } else {
-                        console.log(" error " + response)
-                        commit('toast_snackbar_on_error', response.data);
+                    } else if (response.status == 400) {
+                        console.log(" whats here  " + response)
+                        commit('toast_snackbar_on_error', response);
                         commit('loader_off');
                     }
                 })
                 .catch(error => {
-                    commit('toast_snackbar_on_error', error.message);
+                    console.log(" error " + error.response.data)
+                    error.response.data.errors.map((t) => {
+                        commit('toast_snackbar_on_error', t);
+                    })
                     commit('loader_off');
                 });
         }

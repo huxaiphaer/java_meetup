@@ -5,12 +5,12 @@
             <v-text-field v-model="name" label="Name" required></v-text-field>
             <v-text-field v-model="email" label="E-mail" required></v-text-field>
             <v-text-field v-model="address" label="Address" required></v-text-field>
-            <v-text-field v-model="phoneNumber" label="Phone Number" required></v-text-field>
+            <v-text-field v-model="phoneNumber" label="Phone Number"></v-text-field>
             <v-text-field v-model="password" label="Password" required></v-text-field>
             <v-btn class="mr-4" @click="registerUser">Register</v-btn>
             <v-btn @click="clear">clear</v-btn>
         </form>
-        <SnackBar />
+        <SnackBar/>
     </v-col>
 
 </template>
@@ -22,8 +22,8 @@
 
     export default {
         name: "RegisterUsers",
-        components:{
-          Loader, SnackBar
+        components: {
+            Loader, SnackBar
         },
         data() {
             return {
@@ -32,6 +32,7 @@
                 address: '',
                 phoneNumber: '',
                 password: '',
+                formHasErrors: false,
             }
         },
         methods: {
@@ -40,9 +41,8 @@
                     name: this.name,
                     email: this.email,
                     address: this.address,
-                    phoneNumber: this.phoneNumber,
+                    number: this.phoneNumber,
                     password: this.password,
-                    formHasErrors: false,
                 };
 
                 if (!this.validations()) {
@@ -68,10 +68,6 @@
                 }
                 if (this.address === '') {
                     this.toast_snackbar_on_error('Address is required');
-                    return true;
-                }
-                if (this.phoneNumber === '') {
-                    this.toast_snackbar_on_error('Phone Number is required');
                     return true;
                 }
                 if (this.password === '') {
