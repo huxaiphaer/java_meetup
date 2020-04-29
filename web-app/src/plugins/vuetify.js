@@ -11,8 +11,8 @@ const opts = {
   theme: {
     themes: {
       light: {
-        primary: colors.red.accent4, // #E53935
-        secondary: colors.red.lighten4, // #FFCDD2
+        primary: colors.green, // #E53935
+        secondary: colors.green.lighten4, // #FFCDD2
         accent: colors.indigo.base // #3F51B5
       }
     }

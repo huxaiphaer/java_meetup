@@ -1,29 +1,32 @@
 <template>
-    <v-col>
-        <Loader/>
-        <form>
-            <v-text-field v-model="name" label="Name" required></v-text-field>
-            <v-text-field v-model="email" label="E-mail" required></v-text-field>
-            <v-text-field v-model="address" label="Address" required></v-text-field>
-            <v-text-field v-model="phoneNumber" label="Phone Number"></v-text-field>
-            <v-text-field v-model="password" label="Password" required></v-text-field>
-            <v-btn class="mr-4" @click="registerUser">Register</v-btn>
-            <v-btn @click="clear">clear</v-btn>
-        </form>
+
+    <v-col class="pa-lg-10">
+        <v-card class=" mx-auto">
+            <form class="pa-10">
+                <p class="reg-text">Java MeetUp Registration</p>
+                <v-text-field v-model="name" label="Name" required></v-text-field>
+                <v-text-field v-model="email" label="E-mail" required></v-text-field>
+                <v-text-field v-model="address" label="Address" required></v-text-field>
+                <v-text-field v-model="phoneNumber" label="Phone Number"></v-text-field>
+                <v-text-field v-model="password" label="Password" :type="'password'" required></v-text-field>
+                <v-btn class="mr-4" color="primary" @click="registerUser">Register</v-btn>
+                <v-btn @click="clear">clear</v-btn>
+            </form>
+        </v-card>
         <SnackBar/>
     </v-col>
+
 
 </template>
 
 <script>
     import {mapActions, mapGetters} from "vuex";
-    import Loader from "./Loader";
     import SnackBar from "./SnackBar";
 
     export default {
         name: "RegisterUsers",
         components: {
-            Loader, SnackBar
+            SnackBar
         },
         data() {
             return {
@@ -50,10 +53,15 @@
                 }
             },
             clear() {
-
+                this.name = "";
+                this.email = "";
+                this.address = "";
+                this.phoneNumber = "";
+                this.password = "";
             },
             validations() {
                 // eslint-disable-next-line no-useless-escape
+                const mailFormat = /\S+@\S+\.\S+/;
                 const vm = this;
                 setTimeout(() => {
                     vm.reset_snackbar();
@@ -62,6 +70,12 @@
                     this.toast_snackbar_on_error('Email is required');
                     return true;
                 }
+
+                if (mailFormat.test(this.email.toString()) !== true) {
+                    this.toast_snackbar_on_error('Please enter a valid mail');
+                    return true;
+                }
+
                 if (this.name === '') {
                     this.toast_snackbar_on_error('Name is required');
                     return true;
@@ -90,4 +104,11 @@
     };
 </script>
 
-<style scoped></style>
+<style scoped>
+    .reg-text {
+        color: black;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>

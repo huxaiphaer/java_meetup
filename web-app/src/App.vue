@@ -1,7 +1,8 @@
 <template>
   <v-app>
     <div id="app">
-      <img alt="Vue logo" src="./assets/logo.png" />
+      <Loader/>
+      <img alt="Vue logo" src="./assets/logo_k15t.png" />
       <RegisterUsers />
     </div>
   </v-app>
@@ -9,11 +10,12 @@
 
 <script>
 import RegisterUsers from "./components/RegisterUsers";
+import Loader from "./components/Loader";
 
 export default {
   name: "App",
   components: {
-    RegisterUsers
+    Loader, RegisterUsers
   }
 };
 </script>
@@ -25,6 +27,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  width: 70%;
+  margin: 20px auto;
 }
 </style>

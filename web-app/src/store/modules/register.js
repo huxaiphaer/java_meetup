@@ -23,7 +23,7 @@ export default {
 
         toast_snackbar_on_success(state) {
             state.snackbar.message = 'User registered up Successfully';
-            state.snackbar.color = '#009c0d';
+            state.snackbar.color = '#4CAF50';
             state.snackbar.timeout = 1000;
             state.snackbar.snackbar_visibility = true;
         },
