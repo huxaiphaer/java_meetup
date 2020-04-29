@@ -21,7 +21,7 @@ public class User {
     private String Name;
     @NotBlank(message = "Password is mandatory")
     @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$",
-            message = "Password, minimum 8 characters, at least one letter and one number")
+            message = "Weak password, please enter minimum 8 characters, at least one letter and one number")
     private String Password;
     @NotBlank(message = "Address is mandatory")
     private String Address;
