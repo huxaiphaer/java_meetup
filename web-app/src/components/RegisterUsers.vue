@@ -105,6 +105,9 @@
 </script>
 
 <style scoped>
+    div{
+        color: inherit;
+    }
     .reg-text {
         color: black;
         text-align: center;
