@@ -1,0 +1,27 @@
+version: 2
+
+jobs:
+  lint-and-deploy:
+    docker:
+      - image: circleci/node:10.15.3-stretch
+    steps:
+      - checkout
+      - run:
+          name: Change Directory web-app
+          command: cd web-app
+      - run:
+          name: Install packages
+          command: cd web-app && yarn install
+
+      - run:
+          name: Run tests
+          command: cd web-app &&  yarn run test:unit
+
+      - run:
+          name : Uplaod Test Coverage
+          command: bash <(curl -s https://codecov.io/bash) -cF javascript
+workflows:
+  version: 2
+  main:
+    jobs:
+      - lint-and-deploy

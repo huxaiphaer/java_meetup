@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/huxaiphaer/java_meetup.svg?branch=develop)](https://travis-ci.org/huxaiphaer/java_meetup)
+[![CircleCI](https://circleci.com/gh/huxaiphaer/java_meetup.svg?style=svg)](https://circleci.com/gh/huxaiphaer/java_meetup)
 [![codecov](https://codecov.io/gh/huxaiphaer/java_meetup/branch/develop/graph/badge.svg)](https://codecov.io/gh/huxaiphaer/java_meetup)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ac472386550f7b6280b0/maintainability)](https://codeclimate.com/github/huxaiphaer/java_meetup/maintainability)
 
