@@ -13,6 +13,7 @@ addons:
 
 
 before_script:
+  - cd backend
   - psql -c 'create database users_regsitration_test;' -U postgres
 
 before_install:

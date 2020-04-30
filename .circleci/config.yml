@@ -8,14 +8,14 @@ jobs:
       - checkout
       - run:
           name: Change Directory web-app
-          command: cd web-app
+          command: cd frontend
       - run:
           name: Install packages
-          command: cd web-app && yarn install
+          command: cd frontend && yarn install
 
       - run:
           name: Run tests
-          command: cd web-app &&  yarn run test:unit
+          command: cd frontend &&  yarn run test:unit
 
       - run:
           name : Uplaod Test Coverage
