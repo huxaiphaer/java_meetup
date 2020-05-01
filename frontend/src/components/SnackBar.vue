@@ -1,7 +1,7 @@
 <template>
     <v-snackbar :value="true" v-show="snackbar_status.snackbar_visibility" :bottom="true"
                 :color="snackbar_status.color" :right="true" :timeout="0">
-        {{ snackbar_status.message }}
+        <p class="s-text">{{ snackbar_status.message }}</p>
     </v-snackbar>
 </template>
 
@@ -16,4 +16,8 @@
     };
 </script>
 
-<style scoped></style>
+<style scoped>
+    .s-text{
+        color: white !important;
+    }
+</style>

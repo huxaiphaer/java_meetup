@@ -11,7 +11,8 @@ module.exports = {
         "!src/utils/Urls.js",
         "!src/store/index.js",
         "!src/plugins/vuetify.js",
-        "!src/registerServiceWorker.js"
+        "!src/registerServiceWorker.js",
+        "!src/store/modules/register.js",
 
     ]
 }
