@@ -9,7 +9,7 @@ This application is capable to register members who are to attend the Java MeetU
 
 
 
-#Getting Started.
+# Getting Started.
 
 This project is categorized into two :
 
@@ -197,17 +197,20 @@ _The above command will also display the code coverage_.
 - Jest. _The one for unit testing and mocking HTML components_.
 
 
-## CI/CD Tools
+## CI/CD and other Tools
 
 The following are the tools which help to continuously integrate and deploy :
 
 1. Travis
 2. Circle CI.
 3. CodeCov
+4. Code Climate
 
-The above tools help in building the application. Travis builds the backend project and finally deploys the test coverage to 
-CodeCov, then Circle CI build the frontend (Vue.js) project and deploys it to CodeCov as well. So these tools are triggered in parallel 
-when when one raises a PR, which makes CodCov get the average code coverage.
+The above tools help in building the application. **Travis** builds the backend project and finally deploys the test coverage to 
+**CodeCov**, then also **Circle CI** builds for the frontend (Vue.js) project and deploys it to CodeCov as well. So these tools are triggered in parallel 
+when when one raises a PR, which makes **CodeCov** get the average code coverage.
+
+**CodeClimate**. This one checks for the code quality of all the projects.
 
 _When contributing to this project watch out for the above._
 
