@@ -1,9 +1,9 @@
 <template>
   <v-app>
     <div id="app">
-      <Loader/>
-      <br>
-      <br>
+      <Loader />
+      <br />
+      <br />
       <img alt="Vue logo" src="./assets/logo_k15t.png" />
       <RegisterUsers />
     </div>
@@ -17,7 +17,8 @@ import Loader from "./components/Loader";
 export default {
   name: "App",
   components: {
-    Loader, RegisterUsers
+    Loader,
+    RegisterUsers
   }
 };
 </script>
