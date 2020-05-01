@@ -3,14 +3,14 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/store/modules/register.js</title>
+    <title>Code coverage report for store/modules/register.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="..\..\..\prettify.css" />
-    <link rel="stylesheet" href="..\..\..\base.css" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(..\..\..\sort-arrow-sprite.png);
+            background-image: url(..\..\sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -18,13 +18,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="..\..\..\index.html">All files</a> / <a href="index.html">src/store/modules</a> register.js</h1>
+        <h1><a href="..\..\index.html">All files</a> / <a href="index.html">store/modules</a> register.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">27.27% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/33</span>
+                <span class='fraction'>9/33</span>
             </div>
         
             
@@ -36,16 +36,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">35.71% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>5/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">27.27% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/33</span>
+                <span class='fraction'>9/33</span>
             </div>
         
             
@@ -176,10 +176,14 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -187,21 +191,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -228,7 +228,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -265,15 +265,15 @@ export default {
 <span class="cstat-no" title="statement not covered" >            state.snackbar.timeout = 1000;</span>
 <span class="cstat-no" title="statement not covered" >            state.snackbar.snackbar_visibility = true;</span>
         },
-<span class="fstat-no" title="function not covered" >        to</span>ast_snackbar_on_error(state, message) {
-<span class="cstat-no" title="statement not covered" >            state.snackbar.message = message;</span>
-<span class="cstat-no" title="statement not covered" >            state.snackbar.color = '#9c4130';</span>
-<span class="cstat-no" title="statement not covered" >            state.snackbar.timeout = 1000;</span>
-<span class="cstat-no" title="statement not covered" >            state.snackbar.snackbar_visibility = true;</span>
+        toast_snackbar_on_error(state, message) {
+            state.snackbar.message = message;
+            state.snackbar.color = '#9c4130';
+            state.snackbar.timeout = 1000;
+            state.snackbar.snackbar_visibility = true;
         },
 &nbsp;
-<span class="fstat-no" title="function not covered" >        lo</span>ader_on(state) {
-<span class="cstat-no" title="statement not covered" >            state.loader = true;</span>
+        loader_on(state) {
+            state.loader = true;
         },
 &nbsp;
 <span class="fstat-no" title="function not covered" >        lo</span>ader_off(state) {
@@ -283,15 +283,15 @@ export default {
 &nbsp;
     },
     actions: {
-<span class="fstat-no" title="function not covered" >        to</span>ast_snackbar_on_error({commit}, message) {
-<span class="cstat-no" title="statement not covered" >            commit('toast_snackbar_on_error', message);</span>
+        toast_snackbar_on_error({commit}, message) {
+            commit('toast_snackbar_on_error', message);
         },
 <span class="fstat-no" title="function not covered" >        re</span>set_snackbar({commit}) {
 <span class="cstat-no" title="statement not covered" >            commit('reset_snackbar');</span>
         },
-<span class="fstat-no" title="function not covered" >        re</span>gisterUsers({commit}, data) {
-<span class="cstat-no" title="statement not covered" >            commit('loader_on');</span>
-<span class="cstat-no" title="statement not covered" >            axios</span>
+        registerUsers({commit}, data) {
+            commit('loader_on');
+            axios
                 .post(`${BASE_URL}/api/v1/users`, data)
                 .then(<span class="fstat-no" title="function not covered" >re</span>sponse =&gt; {
 <span class="cstat-no" title="statement not covered" >                    if (response.status == 200) {</span>
@@ -317,8 +317,8 @@ export default {
         }
     },
     getters: {
-<span class="fstat-no" title="function not covered" >        sn</span>ackbar_status(state) {
-<span class="cstat-no" title="statement not covered" >            return state.snackbar;</span>
+        snackbar_status(state) {
+            return state.snackbar;
         },
 <span class="fstat-no" title="function not covered" >        lo</span>ader_status(state) {
 <span class="cstat-no" title="statement not covered" >            return state.loader;</span>
@@ -333,17 +333,17 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Apr 30 2020 16:41:56 GMT+0300 (East Africa Time)
+                at Fri May 01 2020 19:12:37 GMT+0300 (East Africa Time)
             </div>
         </div>
-        <script src="..\..\..\prettify.js"></script>
+        <script src="..\..\prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="..\..\..\sorter.js"></script>
-        <script src="..\..\..\block-navigation.js"></script>
+        <script src="..\..\sorter.js"></script>
+        <script src="..\..\block-navigation.js"></script>
     </body>
 </html>
     

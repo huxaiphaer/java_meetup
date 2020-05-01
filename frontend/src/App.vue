@@ -2,6 +2,8 @@
   <v-app>
     <div id="app">
       <Loader/>
+      <br>
+      <br>
       <img alt="Vue logo" src="./assets/logo_k15t.png" />
       <RegisterUsers />
     </div>

@@ -3,14 +3,14 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/plugins/vuetify.js</title>
+    <title>Code coverage report for Loader.vue</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="..\..\prettify.css" />
-    <link rel="stylesheet" href="..\..\base.css" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(..\..\sort-arrow-sprite.png);
+            background-image: url(sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -18,13 +18,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="..\..\index.html">All files</a> / <a href="index.html">src/plugins</a> vuetify.js</h1>
+        <h1><a href="index.html">All files</a> Loader.vue</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -43,9 +43,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -78,16 +78,9 @@
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -100,28 +93,41 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// src/plugins/vuetify.js
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+    &lt;v-progress-linear
+            value="15"
+            active="loader_status"
+            color="primary"
+            :indeterminate="loader_status"
+            top="top"
+            light="light"
+            v-show="loader_status"
+    &gt;&lt;/v-progress-linear&gt;
+&lt;/template&gt;
 &nbsp;
-import Vue from "vue";
-import Vuetify from "vuetify";
-import "vuetify/dist/vuetify.min.css";
-import colors from "vuetify/lib/util/colors";
+&lt;script&gt;
+    import { mapGetters } from 'vuex';
 &nbsp;
-<span class="cstat-no" title="statement not covered" >Vue.use(Vuetify);</span>
+    export default {
+        name: 'Loader',
+        computed: {
+            ...mapGetters('register', ['loader_status']),
+        },
+    };
+&lt;/script&gt;
 &nbsp;
-const opts = <span class="cstat-no" title="statement not covered" >{</span>
-  theme: {
-    themes: {
-      light: {
-        primary: colors.green, // #E53935
-        secondary: colors.green.lighten4, // #FFCDD2
-        accent: colors.indigo.base // #3F51B5
-      }
-    }
-  }
-};
-&nbsp;
-export default new Vuetify(opts);
+&lt;style scoped&gt;&lt;/style&gt;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -129,17 +135,17 @@ export default new Vuetify(opts);
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Apr 30 2020 16:41:56 GMT+0300 (East Africa Time)
+                at Fri May 01 2020 19:28:38 GMT+0300 (East Africa Time)
             </div>
         </div>
-        <script src="..\..\prettify.js"></script>
+        <script src="prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="..\..\sorter.js"></script>
-        <script src="..\..\block-navigation.js"></script>
+        <script src="sorter.js"></script>
+        <script src="block-navigation.js"></script>
     </body>
 </html>
     
