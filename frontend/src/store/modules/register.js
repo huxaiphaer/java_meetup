@@ -54,7 +54,7 @@ export default {
       axios
         .post(`${BASE_URL}/api/v1/users`, data)
         .then(response => {
-          if (response.status == 200) {
+          if (response.status == 201) {
             setTimeout(() => {
               commit("reset_snackbar");
             }, 4000);

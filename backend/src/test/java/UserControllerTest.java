@@ -104,7 +104,7 @@ public final class UserControllerTest {
         user.setPassword("admin12345678");
         user.setAddress("buziga");
         ResponseEntity<User> postResponse = restTemplate.postForEntity(getRootUrl() + "/api/v1/users", user, User.class);
-        Assert.assertEquals(postResponse.getStatusCode(), HttpStatus.OK);
+        Assert.assertEquals(postResponse.getStatusCode(), HttpStatus.CREATED);
     }
 
 }
