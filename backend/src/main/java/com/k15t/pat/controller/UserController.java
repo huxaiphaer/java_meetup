@@ -12,6 +12,7 @@ import org.springframework.web.server.ResponseStatusException;
 import javax.validation.Valid;
 import javax.xml.bind.DatatypeConverter;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -39,18 +40,21 @@ public class UserController {
         User _user = userRepository.findByEmail(user.getEmail());
 
         if (_user == null) {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            md.update(user.getPassword().getBytes());
-            byte[] digest = md.digest();
-            String myHash = DatatypeConverter
-                    .printHexBinary(digest).toUpperCase();
 
-            user.setPassword(myHash);
-
+            user.setPassword(hashPassword(user.getPassword()));
             return userRepository.save(user);
         } else {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Sorry user already exists");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Sorry, email already exists");
         }
+    }
+
+    public String hashPassword(String password) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        md.update(password.getBytes());
+        byte[] digest = md.digest();
+        String myHash = DatatypeConverter
+                .printHexBinary(digest).toUpperCase();
+        return myHash;
     }
 
 }
