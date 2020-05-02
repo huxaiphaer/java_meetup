@@ -14,8 +14,8 @@
           v-model="password"
         ></v-text-field>
         <v-btn @click="registerUser" class="mr-4" color="primary"
-          >Register</v-btn
-        >
+          >Register
+        </v-btn>
         <v-btn @click="clear">clear</v-btn>
       </form>
     </v-card>
@@ -54,6 +54,7 @@ export default {
 
       if (!this.validations()) {
         this.register(formData);
+        this.clear();
       }
     },
     clear() {

@@ -15,7 +15,7 @@ jobs:
 
       - run:
           name: Run tests
-          command: cd frontend &&  yarn run test:unit
+          command: cd frontend &&  yarn run test:unit -u
 
       - run:
           name : Uplaod Test Coverage

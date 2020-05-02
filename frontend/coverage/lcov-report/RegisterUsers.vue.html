@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.65% </span>
+                <span class="strong">96.88% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>25/31</span>
+                <span class='fraction'>31/32</span>
             </div>
         
             
@@ -36,16 +36,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/5</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.65% </span>
+                <span class="strong">96.88% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>25/31</span>
+                <span class='fraction'>31/32</span>
             </div>
         
             
@@ -173,7 +173,15 @@
 <a name='L115'></a><a href='#L115'>115</a>
 <a name='L116'></a><a href='#L116'>116</a>
 <a name='L117'></a><a href='#L117'>117</a>
-<a name='L118'></a><a href='#L118'>118</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -225,14 +233,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -289,123 +298,126 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
-&nbsp;
-    &lt;v-col class="pa-lg-10"&gt;
-        &lt;v-card class=" mx-auto"&gt;
-            &lt;form class="pa-10"&gt;
-                &lt;p class="reg-text"&gt;Java MeetUp Registration&lt;/p&gt;
-                &lt;v-text-field v-model="name" label="Name" required&gt;&lt;/v-text-field&gt;
-                &lt;v-text-field v-model="email" label="E-mail" required&gt;&lt;/v-text-field&gt;
-                &lt;v-text-field v-model="address" label="Address" required&gt;&lt;/v-text-field&gt;
-                &lt;v-text-field v-model="phoneNumber" label="Phone Number"&gt;&lt;/v-text-field&gt;
-                &lt;v-text-field v-model="password" label="Password" :type="'password'" required&gt;&lt;/v-text-field&gt;
-                &lt;v-btn class="mr-4" color="primary" @click="registerUser"&gt;Register&lt;/v-btn&gt;
-                &lt;v-btn @click="clear"&gt;clear&lt;/v-btn&gt;
-            &lt;/form&gt;
-        &lt;/v-card&gt;
-        &lt;SnackBar/&gt;
-    &lt;/v-col&gt;
-&nbsp;
-&nbsp;
+  &lt;v-col class="pa-lg-10"&gt;
+    &lt;v-card class=" mx-auto"&gt;
+      &lt;form class="pa-10"&gt;
+        &lt;p class="reg-text"&gt;Java MeetUp Registration&lt;/p&gt;
+        &lt;v-text-field label="Name" required v-model="name"&gt;&lt;/v-text-field&gt;
+        &lt;v-text-field label="E-mail" required v-model="email"&gt;&lt;/v-text-field&gt;
+        &lt;v-text-field label="Address" required v-model="address"&gt;&lt;/v-text-field&gt;
+        &lt;v-text-field label="Phone Number" v-model="phoneNumber"&gt;&lt;/v-text-field&gt;
+        &lt;v-text-field
+          :type="'password'"
+          label="Password"
+          required
+          v-model="password"
+        &gt;&lt;/v-text-field&gt;
+        &lt;v-btn @click="registerUser" class="mr-4" color="primary"
+          &gt;Register
+        &lt;/v-btn&gt;
+        &lt;v-btn @click="clear"&gt;clear1&lt;/v-btn&gt;
+      &lt;/form&gt;
+    &lt;/v-card&gt;
+    &lt;SnackBar /&gt;
+  &lt;/v-col&gt;
 &lt;/template&gt;
 &nbsp;
 &lt;script&gt;
-    import {mapActions, mapGetters} from "vuex";
-    import SnackBar from "./SnackBar";
+import { mapActions, mapGetters } from "vuex";
+import SnackBar from "./SnackBar";
 &nbsp;
-    export default {
-        name: "RegisterUsers",
-        components: {
-            SnackBar
-        },
-        data() {
-            return {
-                name: '',
-                email: '',
-                address: '',
-                phoneNumber: '',
-                password: '',
-                formHasErrors: false,
-            }
-        },
-        methods: {
-            registerUser() {
-                const formData = {
-                    name: this.name,
-                    email: this.email,
-                    address: this.address,
-                    number: this.phoneNumber,
-                    password: this.password,
-                };
-&nbsp;
-                if (!this.validations()) {
-                    this.register(formData);
-                }
-            },
-<span class="fstat-no" title="function not covered" >            clear() {</span>
-<span class="cstat-no" title="statement not covered" >                this.name = "";</span>
-<span class="cstat-no" title="statement not covered" >                this.email = "";</span>
-<span class="cstat-no" title="statement not covered" >                this.address = "";</span>
-<span class="cstat-no" title="statement not covered" >                this.phoneNumber = "";</span>
-<span class="cstat-no" title="statement not covered" >                this.password = "";</span>
-            },
-            validations() {
-                // eslint-disable-next-line no-useless-escape
-                const mailFormat = /\S+@\S+\.\S+/;
-                const vm = this;
-<span class="fstat-no" title="function not covered" >                setTimeout(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                    vm.reset_snackbar();</span>
-                }, 2000);
-                if (this.email === '') {
-                    this.toast_snackbar_on_error('Email is required');
-                    return true;
-                }
-&nbsp;
-                if (mailFormat.test(this.email.toString()) !== true) {
-                    this.toast_snackbar_on_error('Please enter a valid mail');
-                    return true;
-                }
-&nbsp;
-                if (this.name === '') {
-                    this.toast_snackbar_on_error('Name is required');
-                    return true;
-                }
-                if (this.address === '') {
-                    this.toast_snackbar_on_error('Address is required');
-                    return true;
-                }
-                if (this.password === '') {
-                    this.toast_snackbar_on_error('Password  is required');
-                    return true;
-                }
-                return this.formHasErrors;
-            },
-            ...mapActions({
-                register: 'register/registerUsers',
-                reset_snackbar: 'register/reset_snackbar',
-                toast_snackbar_on_error: 'register/toast_snackbar_on_error',
-&nbsp;
-            }),
-            computed: {
-                ...mapGetters('register', ['snackbar_status']),
-            },
-&nbsp;
-        },
+export default {
+  name: "RegisterUsers",
+  components: {
+    SnackBar
+  },
+  data() {
+    return {
+      name: "",
+      email: "",
+      address: "",
+      phoneNumber: "",
+      password: "",
+      formHasErrors: false
     };
+  },
+  methods: {
+    registerUser() {
+      const formData = {
+        name: this.name,
+        email: this.email,
+        address: this.address,
+        number: this.phoneNumber,
+        password: this.password
+      };
+&nbsp;
+      if (!this.validations()) {
+        this.register(formData);
+        this.clear();
+      }
+    },
+    clear() {
+      this.name = "";
+      this.email = "";
+      this.address = "";
+      this.phoneNumber = "";
+      this.password = "";
+    },
+    validations() {
+      // eslint-disable-next-line no-useless-escape
+      const mailFormat = /\S+@\S+\.\S+/;
+      const vm = this;
+<span class="fstat-no" title="function not covered" >      setTimeout(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        vm.reset_snackbar();</span>
+      }, 2000);
+      if (this.email === "") {
+        this.toast_snackbar_on_error("Email is required");
+        return true;
+      }
+&nbsp;
+      if (mailFormat.test(this.email.toString()) !== true) {
+        this.toast_snackbar_on_error("Please enter a valid mail");
+        return true;
+      }
+&nbsp;
+      if (this.name === "") {
+        this.toast_snackbar_on_error("Name is required");
+        return true;
+      }
+      if (this.address === "") {
+        this.toast_snackbar_on_error("Address is required");
+        return true;
+      }
+      if (this.password === "") {
+        this.toast_snackbar_on_error("Password  is required");
+        return true;
+      }
+      return this.formHasErrors;
+    },
+    ...mapActions({
+      register: "register/registerUsers",
+      reset_snackbar: "register/reset_snackbar",
+      toast_snackbar_on_error: "register/toast_snackbar_on_error"
+    }),
+    computed: {
+      ...mapGetters("register", ["snackbar_status"])
+    }
+  }
+};
 &lt;/script&gt;
 &nbsp;
 &lt;style scoped&gt;
-    div{
-        color: inherit;
-    }
-    .reg-text {
-        color: black;
-        text-align: center;
-        font-size: 20px;
-        font-weight: bold;
-    }
+div {
+  color: inherit;
+}
+&nbsp;
+.reg-text {
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
 &lt;/style&gt;
 &nbsp;</pre></td></tr></table></pre>
 
@@ -414,7 +426,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri May 01 2020 19:28:38 GMT+0300 (East Africa Time)
+                at Sat May 02 2020 22:01:38 GMT+0300 (East Africa Time)
             </div>
         </div>
         <script src="prettify.js"></script>

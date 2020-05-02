@@ -28,6 +28,7 @@ public class User {
     @NotBlank(message = "Email is mandatory")
     @javax.validation.constraints.Email(message = "Email format is wrong please")
     @Pattern(regexp = ".+@.+\\..+", message = "Please provide a valid email address")
+    @Column(unique = true)
     private String Email;
     private String Number;
 

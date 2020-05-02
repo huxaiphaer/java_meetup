@@ -8,12 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.context.annotation.Profile;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 @RunWith(SpringRunner.class)
@@ -96,15 +97,21 @@ public final class UserControllerTest {
 
     @Test
     public void registerUserWithCorrectCredentials() throws Exception {
+        LocalDateTime myObj = LocalDateTime.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
+        String formattedDate = myObj.format(myFormatObj);
 
+        String mail = "".concat("ad").concat(formattedDate).concat("@gmail.com");
         User user = new User();
-        user.setEmail("admin@gmail.com");
+        user.setEmail(mail);
         user.setName("abu");
         user.setNumber("070567778");
         user.setPassword("admin12345678");
         user.setAddress("buziga");
         ResponseEntity<User> postResponse = restTemplate.postForEntity(getRootUrl() + "/api/v1/users", user, User.class);
+        System.out.println(mail);
         Assert.assertEquals(postResponse.getStatusCode(), HttpStatus.CREATED);
+
     }
 
 }
