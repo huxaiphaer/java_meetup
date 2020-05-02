@@ -10,8 +10,9 @@ exports[`Register.vue should have a regsiterUsers component and match snapshot 1
       <v-text-field-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" value="" backgroundcolor="" label="Address" loaderheight="2" clearicon="$clear" type="text" required=""></v-text-field-stub>
       <v-text-field-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" value="" backgroundcolor="" label="Phone Number" loaderheight="2" clearicon="$clear" type="text"></v-text-field-stub>
       <v-text-field-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" value="" backgroundcolor="" label="Password" loaderheight="2" clearicon="$clear" type="password" required=""></v-text-field-stub>
-      <v-btn-stub color="primary" tag="button" activeclass="" type="button" class="mr-4">Register</v-btn-stub>
-      <v-btn-stub tag="button" activeclass="" type="button">clear</v-btn-stub>
+      <v-btn-stub color="primary" tag="button" activeclass="" type="button" class="mr-4">Register
+      </v-btn-stub>
+      <v-btn-stub tag="button" activeclass="" type="button">clear1</v-btn-stub>
     </form>
   </v-card-stub>
   <snackbar-stub></snackbar-stub>
