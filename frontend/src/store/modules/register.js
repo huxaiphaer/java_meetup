@@ -54,13 +54,14 @@ export default {
       axios
         .post(`${BASE_URL}/api/v1/users`, data)
         .then(response => {
+          commit("loader_on");
           if (response.status == 201) {
             setTimeout(() => {
               commit("reset_snackbar");
             }, 4000);
             commit("toast_snackbar_on_success");
             commit("loader_off");
-          } else if (response.status == 400) {
+          } else {
             setTimeout(() => {
               commit("toast_snackbar_on_error", response);
             }, 4000);
@@ -68,9 +69,7 @@ export default {
           }
         })
         .catch(error => {
-          error.response.data.errors.map(t => {
-            commit("toast_snackbar_on_error", t);
-          });
+          commit("toast_snackbar_on_error", error.response.data.errors || error.response.data.message)
           commit("loader_off");
         });
     }
