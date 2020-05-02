@@ -107,7 +107,7 @@ in the body section :
 ```
 
 If you hit **POST** in postman, you should get a **201** status code meaning a resource has been created, 
-thus you hve successfully set the backend
+thus you have successfully set the backend
 
 
 _If you get any Exceptions , just go back to step 1 and cross check 
@@ -120,12 +120,12 @@ To run backend tests run the following command :
 
 `mvn test`
 
-The above test will run all the tests and provide the test coverage as well with the 
+The above command will run all the tests and provide the test coverage as well with the 
 help of Jacoco.
 
 To check the coverage, navigate to the following directory :
 
-`backend/src/target/site/jacoco/index.html`. Then click and browse the `index.hmtl` folder to see the test coverage.
+`backend/src/target/site/jacoco/index.html`. Then click and file `index.hmtl` and browse it with any browser e.g Chrome to see the test coverage.
 
 
 ### Backend endpoints :
@@ -150,7 +150,7 @@ The Base URL is :  `http://localhost:8090`
 
 
 
-##Frontend
+## Frontend
 
 ### How to set up the Frontend Project.
 
@@ -178,9 +178,11 @@ However if you were in the `backend` directory you need to run
 If the application finishes running in the console you'll be provided this [link](http://localhost:8080/)
 to navigate to the application.
 
+Or just simply click [here](http://localhost:8080/) to browse the application.
+
 5 . If you contribute to the project ensure that you keep on linting with the command below :
 
-`npm run lint`
+`yarn lint` or `npm run lint`
 
 
 ### How to run Frontend tasks :
